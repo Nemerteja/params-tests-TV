@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
-
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class FirstTest {
@@ -33,7 +33,7 @@ public class FirstTest {
         $(byText("April")).click();
         $(byText("2021")).click();
         $(byText("2005")).click();
-        $(byText("30")).click();
+        $(byText("25")).click();
         $("#subjectsInput").setValue("Some subject");
         $(byText("Music")).click();
 
@@ -47,7 +47,17 @@ public class FirstTest {
         $(byText("Delhi")).click();
         $("#submit").click();
 
-
+        $("#example-modal-sizes-title-lg").shouldBe(visible);
+        $("[class=\"modal-body\"]").shouldHave(text("Student Name"),text("Some Name"),
+                text("Student Email"),text("aaa@aa.aa"),
+                text("Gender"),text("Female"),
+                text("Mobile"),text("1234567891"),
+                text("Date of Birth"),text("25 April,2005"),
+                text("Subjects"),text("Some subject"),
+                text("Hobbies"),text("Music"),
+                text("Picture"),text("1.png"),
+                text("Address"),text("Some address"),
+                text("State and City"),text("NCR Delhi"));
 
 }
 }
