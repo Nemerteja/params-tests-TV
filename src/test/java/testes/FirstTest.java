@@ -1,3 +1,5 @@
+package testes;
+
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -35,7 +37,7 @@ public class FirstTest {
         $("#subjectsInput").setValue("Some subject");
         $(byText("Music")).click();
 
-        File file = new File("src/test/java/1.png");
+        File file = new File("src/test/java/testes/resourses/1.png");
        $("#uploadPicture").uploadFile(file);
 
         $("#currentAddress").setValue("Some address");
