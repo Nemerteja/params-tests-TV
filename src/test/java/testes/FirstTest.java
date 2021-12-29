@@ -34,7 +34,8 @@ public class FirstTest {
         $(byText("2021")).click();
         $(byText("2005")).click();
         $(byText("25")).click();
-        $("#subjectsInput").setValue("Some subject");
+        $("#subjectsInput").setValue("m");
+        $(byText("Maths")).click();
         $(byText("Music")).click();
 
         File file = new File("src/test/java/testes/resourses/1.png");
@@ -53,7 +54,7 @@ public class FirstTest {
                 text("Gender"),text("Female"),
                 text("Mobile"),text("1234567891"),
                 text("Date of Birth"),text("25 April,2005"),
-                text("Subjects"),text("Some subject"),
+                text("Subjects"),text("Maths"),
                 text("Hobbies"),text("Music"),
                 text("Picture"),text("1.png"),
                 text("Address"),text("Some address"),
