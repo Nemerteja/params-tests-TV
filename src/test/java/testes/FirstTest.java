@@ -21,22 +21,22 @@ public class FirstTest {
     @Test
     void fillFormTest() {
         open("https://demoqa.com/automation-practice-form");
-        $("[id=firstName]").scrollIntoView(true);
-        $("[id=firstName]").setValue("Some");
-        $("[id=lastName]").setValue("Name");
+        $("#firstName").scrollIntoView(true);
+        $("#firstName").setValue("Some");
+        $("#lastName").setValue("Name");
         $("#userEmail").setValue("aaa@aa.aa");
-        $("[class=\"custom-control custom-radio custom-control-inline\"]").click();
+        $(".custom-radio").click();
         $("#userNumber").setValue("1234567891");
 
         $("#dateOfBirthInput").click();
-        $("[class=\"react-datepicker__month-select\"]").click();
+        $(".react-datepicker__month-select").click();
         $("[value=\"3\"]").click();
-        $("[class=\"react-datepicker__year-select\"]").click();
+        $(".react-datepicker__year-select").click();
         $("[value=\"2005\"]").click();
-        $("[class=\"react-datepicker__day react-datepicker__day--025\"]").click();
+        $(".react-datepicker__day--025").click();
         $("#subjectsInput").setValue("m");
         $(byText("Maths")).click();
-        $("[class=\"custom-control custom-checkbox custom-control-inline\"]").click();
+        $(".custom-checkbox").click();
 
         File file = new File("src/test/java/testes/resourses/1.png");
         $("#uploadPicture").uploadFile(file);
@@ -49,7 +49,7 @@ public class FirstTest {
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldBe(visible);
-        $("[class=\"modal-body\"]").shouldHave(text("Student Name"), text("Some Name"),
+        $(".modal-body").shouldHave(text("Student Name"), text("Some Name"),
                 text("Student Email"), text("aaa@aa.aa"),
                 text("Gender"), text("Male"),
                 text("Mobile"), text("1234567891"),
