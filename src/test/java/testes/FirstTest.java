@@ -14,8 +14,8 @@ public class FirstTest extends TestBase {
     @Test
     void fillFormTest() {
         registrationPage.openPage();
-        registrationPage.inputName(fFirstName, fSurName);
-        registrationPage.inputEmail(fEmailIn);
+        registrationPage.inputName(fakerFirstName, fakerSurName);
+        registrationPage.inputEmail(fakerEmail);
         registrationPage.radioGender(fGenderRad);
         registrationPage.inputPhone(fPhoneIn);
 
@@ -27,21 +27,21 @@ public class FirstTest extends TestBase {
         File file = new File("src/test/java/testes/resourses/1.png");
         $("#uploadPicture").uploadFile(file);
 
-        registrationPage.inputAdress(fAdressIn);
+        registrationPage.inputAdress(fakerAdress);
         registrationPage.inputState(fStateIn);
         registrationPage.inputCity(fCityIn);
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldBe(visible);
-        registrationPage.checkResults("Student Name", fFirstName + " " + fSurName)
-                .checkResults("Student Email", fEmailIn)
+        registrationPage.checkResults("Student Name", fakerFirstName + " " + fakerSurName)
+                .checkResults("Student Email", fakerEmail)
                 .checkExactResults("Gender", "Gender " + fGenderRad)
                 .checkResults("Mobile", fPhoneIn)
                 .checkResults("Date of Birth", fDayIn+ " " + fMonthIn + "," + fYearIn)
                 .checkResults("Subjects", fSubjectIn)
                 .checkResults("Hobbies", fHobbieCheck)
                 .checkResults("Picture", "1.png")
-                .checkResults("Address", fAdressIn)
+                .checkResults("Address", fakerAdress)
                 .checkResults("State and City", fStateIn + " " + fCityIn);
 
     }
