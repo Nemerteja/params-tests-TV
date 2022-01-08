@@ -2,14 +2,14 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import pages.components.CalendarComponent;
+
 import static com.codeborne.selenide.Selectors.byText;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
-
- //   private final String SNAME = "Student Name";
 
 
     private SelenideElement
@@ -24,6 +24,8 @@ public class RegistrationPage {
             fCityDropDown = $("#city"),
             fSubjectInput = $("#subjectsInput"),
             finaltable = $(".table-responsive");
+
+    public CalendarComponent fcalendar = new CalendarComponent();
 
     public void openPage (){
         open("https://demoqa.com/automation-practice-form");
