@@ -6,23 +6,10 @@ import java.io.File;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
+import static testes.TestData.*;
 
 
 public class FirstTest extends TestBase {
-
-    String fFirstName = "Some",
-            fSurName = "Name",
-            fEmailIn = "aaa@aa.aa",
-            fGenderRad = "Female",
-            fPhoneIn = "1234567891",
-            fDayIn = "25",
-            fMonthIn = "April",
-            fYearIn = "2005",
-            fSubjectIn = "Maths",
-            fHobbieCheck = "Sports",
-            fAdressIn = "Some address",
-            fStateIn = "NCR",
-            fCityIn = "Delhi";
 
     @Test
     void fillFormTest() {
