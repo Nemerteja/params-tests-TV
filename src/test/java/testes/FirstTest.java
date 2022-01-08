@@ -1,7 +1,5 @@
 package testes;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -12,15 +10,11 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class FirstTest {
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.startMaximized = true;
-    }
+public class FirstTest extends TestBase {
 
     @Test
     void fillFormTest() {
-        open("https://demoqa.com/automation-practice-form");
+        registrationPage.openPage();
         $("#firstName").scrollIntoView(true);
         $("#firstName").setValue("Some");
         $("#lastName").setValue("Name");

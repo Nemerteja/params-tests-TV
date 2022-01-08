@@ -12,8 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class SelenideGithubTest {
     @BeforeAll
     static void beforeAll() {
-        Configuration.startMaximized = true;
-    }
+        Configuration.startMaximized = true;}
 
     @Test
     void SelenideWikiSoftAssertionsShouldHaveCodeJUnit5() {
