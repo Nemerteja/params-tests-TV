@@ -10,38 +10,52 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class FirstTest extends TestBase {
 
+    String fFirstName = "Some",
+            fSurName = "Name",
+            fEmailIn = "aaa@aa.aa",
+            fGenderRad = "Female",
+            fPhoneIn = "1234567891",
+            fDayIn = "25",
+            fMonthIn = "April",
+            fYearIn = "2005",
+            fSubjectIn = "Maths",
+            fHobbieCheck = "Sports",
+            fAdressIn = "Some address",
+            fStateIn = "NCR",
+            fCityIn = "Delhi";
+
     @Test
     void fillFormTest() {
         registrationPage.openPage();
-        registrationPage.inputName("Some", "Name");
-        registrationPage.inputEmail("aaa@aa.aa");
-        registrationPage.radioGender("Male");
-        registrationPage.inputPhone("1234567891");
+        registrationPage.inputName(fFirstName, fSurName);
+        registrationPage.inputEmail(fEmailIn);
+        registrationPage.radioGender(fGenderRad);
+        registrationPage.inputPhone(fPhoneIn);
 
-        registrationPage.fcalendar.setDate("25", "April","2005");
+        registrationPage.fcalendar.setDate(fDayIn, fMonthIn,fYearIn);
 
-        registrationPage.inputSubject("Maths");
-        registrationPage.checkboxHobbie("Sports");
+        registrationPage.inputSubject(fSubjectIn);
+        registrationPage.checkboxHobbie(fHobbieCheck);
 
         File file = new File("src/test/java/testes/resourses/1.png");
         $("#uploadPicture").uploadFile(file);
 
-        registrationPage.inputAdress("Some address");
-        registrationPage.inputState("NCR");
-        registrationPage.inputCity("Delhi");
+        registrationPage.inputAdress(fAdressIn);
+        registrationPage.inputState(fStateIn);
+        registrationPage.inputCity(fCityIn);
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldBe(visible);
-        registrationPage.checkResults("Student Name", "Some Name")
-                .checkResults("Student Email", "aaa@aa.aa")
-                .checkExactResults("Gender", "Gender Male")
-                .checkResults("Mobile", "1234567891")
-                .checkResults("Date of Birth", "25 April,2005")
-                .checkResults("Subjects", "Maths")
-                .checkResults("Hobbies", "Sports")
+        registrationPage.checkResults("Student Name", fFirstName + " " + fSurName)
+                .checkResults("Student Email", fEmailIn)
+                .checkExactResults("Gender", "Gender " + fGenderRad)
+                .checkResults("Mobile", fPhoneIn)
+                .checkResults("Date of Birth", fDayIn+ " " + fMonthIn + "," + fYearIn)
+                .checkResults("Subjects", fSubjectIn)
+                .checkResults("Hobbies", fHobbieCheck)
                 .checkResults("Picture", "1.png")
-                .checkResults("Address", "Some address")
-                .checkResults("State and City", "NCR Delhi");
+                .checkResults("Address", fAdressIn)
+                .checkResults("State and City", fStateIn + " " + fCityIn);
 
     }
 }
