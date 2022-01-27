@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 
 import static Utils.Files.*;
-import static com.codeborne.pdftest.PDF.containsText;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class PdfFileTest {
@@ -16,7 +15,7 @@ public class PdfFileTest {
         String exepectedData = "Love Letter is played over several game rounds";
 
         PDF pdf = getPDF(pdfFilePath);
-        assertThat(pdf, containsText(exepectedData));
+        assertThat(pdf, PDF.containsText(exepectedData));
 
     }
 }
