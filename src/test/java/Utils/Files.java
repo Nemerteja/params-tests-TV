@@ -10,10 +10,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
-import org.apache.hc.core5.util.TextUtils;
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.ss.usermodel.Cell;
@@ -109,11 +107,13 @@ public class Files {
         XWPFDocument docx =new XWPFDocument(fis);
         List<XWPFParagraph> getDocxParagraphs= docx.getParagraphs();
 
+        String str = "";
 
+        for (XWPFParagraph currentParagraph : getDocxParagraphs)
+        {
+            str += currentParagraph.getText().toString();
 
-
-        String str = String.join(",", getDocxParagraphs);
-
+        }
 
 
         docx.close();
