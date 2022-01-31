@@ -22,7 +22,7 @@ public class XlsFileTest {
 
     @Test
     public void xlsCellTest() throws IOException {
-        String xlsFilePath = "src/test/java/testes/resourses/1.xls";
+        String xlsFilePath = "src/test/java/resourses/1.xls";
         String exepectedData = "some text";
 
         XLS sprxls = getXLS(xlsFilePath);
@@ -33,7 +33,7 @@ public class XlsFileTest {
 
     @Test
     public void xlsxTest() throws IOException {
-        String xlsFilePath = "src/test/java/testes/resourses/2.xlsx";
+        String xlsFilePath = "src/test/java/resourses/2.xlsx";
         String exepectedData = "some text";
 
          String actData = readXlsxFromPath(xlsFilePath);

@@ -11,7 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class PdfFileTest {
     @Test
     public void pdfTest() throws IOException {
-        String pdfFilePath = "src/test/java/testes/resourses/1.pdf";
+        String pdfFilePath = "src/test/java/resourses/1.pdf";
         String exepectedData = "Love Letter is played over several game rounds";
 
         PDF pdf = getPDF(pdfFilePath);

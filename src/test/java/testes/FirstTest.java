@@ -24,7 +24,7 @@ public class FirstTest extends TestBase {
         registrationPage.inputSubject(fSubjectIn);
         registrationPage.checkboxHobbie(fHobbieCheck);
 
-        File file = new File("src/test/java/testes/resourses/1.png");
+        File file = new File("src/test/java/resourses/1.png");
         $("#uploadPicture").uploadFile(file);
 
         registrationPage.inputAdress(fakerAdress);

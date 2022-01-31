@@ -14,9 +14,9 @@ public class ZipFileTest {
 
     @Test
     public void zipTest() throws IOException, ZipException {
-        String zipFilePath = "src/test/java/testes/resourses/1.zip";
-        String unzipFolderPath = "src/test/java/testes/resourses/unzip";
-        String unzipTxtFilePath = "src/test/java/testes/resourses/unzip/1.txt";
+        String zipFilePath = "src/test/java/resourses/1.zip";
+        String unzipFolderPath = "src/test/java/resourses/unzip";
+        String unzipTxtFilePath = "src/test/java/resourses/unzip/1.txt";
         String zipPassword = "";
 
         String exepectedData = "Marvin Gaye";
