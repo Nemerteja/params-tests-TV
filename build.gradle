@@ -20,7 +20,7 @@ dependencies {
             "org.apache.poi:poi-scratchpad:5.0.0",
             "org.slf4j:slf4j-jdk14:1.7.24",
             "com.github.javafaker:javafaker:0.12",
-            "org.junit.jupiter:junit-jupiter-api:5.8.1")
+            "org.junit.jupiter:junit-jupiter:5.8.1")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.1"
 
 }
